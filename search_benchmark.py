@@ -3,7 +3,7 @@ import numpy as np
 import time
 
 # Connect to Milvus
-connections.connect("default", host="localhost", port="19530", max_receive_message_length=514983574, max_send_message_length=514983574)
+connections.connect("default", host="localhost", port="19530")
 collection_name = "diskann_benchmark"
 collection = Collection(name=collection_name)
 
