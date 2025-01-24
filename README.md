@@ -16,9 +16,10 @@ sudo docker-compose up -d
 ```
 
 
-### List of all running containers and Install VectorDBBench
+### List of all running containers to verify setup  and Install VectorDBBench
 ```
 sudo docker container ls -a
+```
 
 ```
 ssgroot@test84:~/DI_VectorDB_Tests$ sudo docker container ls -a
@@ -26,6 +27,7 @@ CONTAINER ID   IMAGE                                      COMMAND               
 96764f0bb8c1   milvusdb/milvus:v2.5.0-beta                "/tini -- milvus run…"   10 days ago   Up 22 hours (healthy)   0.0.0.0:9091->9091/tcp, :::9091->9091/tcp, 0.0.0.0:19530->19530/tcp, :::19530->19530/tcp   milvus-standalone
 eb556e566978   minio/minio:RELEASE.2023-03-20T20-16-18Z   "/usr/bin/docker-ent…"   10 days ago   Up 22 hours (healthy)   0.0.0.0:9000-9001->9000-9001/tcp, :::9000-9001->9000-9001/tcp                              milvus-minio
 4262da84c397   quay.io/coreos/etcd:v3.5.14                "etcd -advertise-cli…"   10 days ago   Up 22 hours (healthy)   2379-2380/tcp                                                                              milvus-etcd
+```
 ```
 pip3.11 install vectordb-bench
 ```
