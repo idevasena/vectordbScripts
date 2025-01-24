@@ -1,3 +1,4 @@
+This has been tested on Python3.11.
 ## Setup Milvus VectorDB and VectorDBBench
 
 After cloning this repository, please do the following:
