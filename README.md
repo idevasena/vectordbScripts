@@ -54,3 +54,15 @@ Do the following:
 pip3.11 install setuptools==68  --> downgrading setuptools works
 pip3.11 install vectordb-bench
 ```
+
+### Running VectorDBBench with the DiskANN Index
+
+1. Setup Milvus, Configure VectorDBBench
+2. Prepare Dataset and Insert Data
+3. Running Benchmark
+
+```
+python3.11 setup_milvus.py
+python3.11 insert_data.py
+python3.11 search_benchmark.py
+```
