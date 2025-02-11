@@ -80,6 +80,9 @@ def run_workloads(config, workloads):
             dataset_size=workload["dataset_size"],
             dim=config["milvus"]["dim"]
         )
+        
+        # Load Collection
+        collection.load()
 
         # Perform search
         search_params = {"ef": workload["search_params"]["ef"]}

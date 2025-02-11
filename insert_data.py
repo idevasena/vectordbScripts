@@ -3,11 +3,11 @@ import numpy as np
 
 # Connect to Milvus
 connections.connect("default", host="localhost", port="19530", max_receive_message_length=514983574, max_send_message_length=514983574)
-collection_name = "diskann_benchmark"
+collection_name = "diskann_openai"
 collection = Collection(name=collection_name)
 
 # Function to Generate Random Data
-def generate_data(num_vectors, dim=128):
+def generate_data(num_vectors, dim=1536):
     ids = list(range(num_vectors))
     vectors = np.random.random((num_vectors, dim)).tolist()
     return [ids, vectors]

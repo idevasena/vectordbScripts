@@ -4,13 +4,14 @@ import time
 
 # Connect to Milvus
 connections.connect("default", host="localhost", port="19530")
-collection_name = "diskann_benchmark"
+collection_name = "diskann_openai"
 collection = Collection(name=collection_name)
+collection.load()
 
 # Search Benchmark Function
-def search_benchmark(num_queries, dim=128, ef=50):
+def search_benchmark(num_queries, dim=1536, ef=200):
     query_vectors = [np.random.random(dim).tolist() for _ in range(num_queries)]
-    search_params = {"metric_type": "L2", "params": {"ef": ef}}
+    search_params = {"metric_type": "COSINE", "params": {"ef": ef}}
     start_time = time.time()
     results = collection.search(query_vectors, "vector", search_params, limit=10)
     end_time = time.time()
@@ -18,6 +19,7 @@ def search_benchmark(num_queries, dim=128, ef=50):
     return results
 
 # Run Search Benchmarks
-for queries in [10, 100, 1000]:  # Vary the number of queries
+for queries in [1000]:
+# for queries in [10, 100, 1000]:  # Vary the number of queries
     print(f"Running benchmark with {queries} queries...")
     search_benchmark(num_queries=queries)
